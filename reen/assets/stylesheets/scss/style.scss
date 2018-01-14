@@ -322,6 +322,33 @@ button:focus {
     background: #3c5065;
     color: #73879c;
     font-size: 30px;
+    &:hover {
+        i {
+            color: #fff;
+            animation-name: arrowTop;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+        }
+    }
+}
+
+#preloader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #eee;
+    top: 0;
+    left: 0;
+    z-index: 999999;
+}
+
+@keyframes arrowTop {
+    from {
+        transform: translateY(10);
+    }
+    to {
+        transform: translateY(-10px);
+    }
 }
 
 ////////////////////////////////////////////////////
@@ -444,10 +471,26 @@ header.page-header {
             border: 1px solid #e6e9ed;
             border-top: 0;
             border-bottom-width: 2px;
+            .item-img {}
         }
     }
     .wi-slider {
         margin: 75px 0 34px;
+        position: relative;
+        .slide-item {
+            .hvr-text {
+                @include posMid();
+                @include flexMid();
+                @include fit();
+                flex-direction: column;
+                color: #fff;
+                transition: all .2s ease-in-out;
+                opacity: 0;
+            }
+            &:hover .hvr-text {
+                opacity: 1;
+            }
+        }
     }
 }
 
@@ -471,6 +514,28 @@ footer.page-footer {
         background: #2f4052;
         color: #fff;
         .widget {
+            h6 {
+                font-size: 21px;
+                margin-bottom: 18px;
+            }
+            .arrow-anim {
+                font-weight: bold;
+                font-size: 18px;
+                &:hover {
+                    text-decoration: none;
+                    color: $secondary-color;
+                    transition: all .2s ease-in-out;
+                    i {
+                        color: $secondary-color;
+                        margin-left: 20px;
+                        transition-delay: .1s;
+                    }
+                }
+                i {
+                    margin-left: 10px;
+                    transition: all .4s ease-in-out
+                }
+            }
             .subscribe-form {
                 background: $dark-grey;
                 padding: 5px;

@@ -192,14 +192,18 @@
             <!-- Equal Two Work Item -->
             <div class="card-deck">
                 <div class="card">
-                    <img src="assets/img/2.jpg" alt="Portfolio" class="card-img-top">
+                    <a href="#" class="item-img">
+                        <img src="assets/img/2.jpg" alt="Portfolio" class="card-img-top">
+                    </a>
                     <div class="card-body text-center">
                         <h4 class="card-title">Grand Motel gets an identity brushup</h4>
                         <span>Identity</span>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="assets/img/3.jpg" alt="Portfolio" class="card-img-top">
+                    <a href="#" class="item-img">
+                        <img src="assets/img/3.jpg" alt="Portfolio" class="card-img-top item-img">
+                    </a>
                     <div class="card-body text-center">
                         <h4 class="card-title">Fresh branding for a creative startup</h4>
                         <span>Identity</span>
@@ -268,9 +272,11 @@
                         <div class="widget">
                             <h6>Who we are</h6>
                             <img src="assets/img/icons/f-logo.png" alt="Logo">
-                            <p>Magnis modipsae voloratati andigen daepeditem quiate re porem que aut labor. Laceaque eictemperum
+                            <p class="mt-2 mb-3">Magnis modipsae voloratati andigen daepeditem quiate re porem que aut labor. Laceaque eictemperum
                                 quiae sitiorem rest non restibusaes maio es dem tumquam.</p>
-                            <a href="#">More about us</a>
+                            <a href="#" class="arrow-anim">More about us
+                                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                            </a>
                         </div>
                     </div>
                     <!-- Widget -->
@@ -289,15 +295,15 @@
                     <div class="col-lg-3">
                         <div class="widget">
                             <h6>Get in touch</h6>
-                            <p>Doloreiur quia commolu ptatemp dolupta oreprerum tibusam eumenis et consent accullignis dentibea
+                            <p class="mb-2">Doloreiur quia commolu ptatemp dolupta oreprerum tibusam eumenis et consent accullignis dentibea
                                 autem inisita.</p>
                             <ul>
                                 <li>
-                                    <i class="fa fa-map-marker" aria-hidden="true"></i> 84 Street, City, State 24813</li>
+                                    <i class="fa fa-map-marker mr-" aria-hidden="true"></i> 84 Street, City, State 24813</li>
                                 <li>
-                                    <i class="fa fa-mobile" aria-hidden="true"></i>+00 (123) 456 78 90</li>
+                                    <i class="fa fa-mobile mr-1" aria-hidden="true"></i>+00 (123) 456 78 90</li>
                                 <li>
-                                    <i class="fa fa-envelope" aria-hidden="true"></i> info@reen.com</li>
+                                    <i class="fa fa-envelope mr-1" aria-hidden="true"></i> info@reen.com</li>
                             </ul>
                         </div>
                     </div>
@@ -306,7 +312,7 @@
                         <div class="widget">
                             <h6>Free updates</h6>
                             <p>Conecus iure posae volor remped modis aut lor volor accabora incim resto explabo.</p>
-                            <form class="subscribe-form d-flex">
+                            <form class="subscribe-form d-flex mt-4">
                                 <input type="text" placeholder="Enter Your Email Address" class="form-control">
                                 <button type="submit" class="btn btn-secondary">SUBSCRIBE</button>
                             </form>
@@ -344,8 +350,8 @@
                                     <a href="#">Contact</a>
                                 </li>
                             </ul>
-                            <button type="button" class="btn ml-5" id="scroll-top">
-                                <i class="fa fa-angle-up" aria-hidden="true"></i>
+                            <button type="button" class="btn ml-5" id="scroll-top" title="Back Top">
+                                <i class="fa fa-angle-double-up" aria-hidden="true"></i>
                             </button>
 
                         </nav>
@@ -357,6 +363,9 @@
 
     </footer>
     <!-- =========================== Footer =========================== -->
+    <!-- =========================== Preloader =========================== -->
+    <div id="preloader"></div>
+    <!-- =========================== Preloader =========================== -->
 
     <!-- =========================== Scripts =========================== -->
     <!-- Vendor js-->

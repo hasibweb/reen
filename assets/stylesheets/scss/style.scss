@@ -429,7 +429,7 @@ header.page-header {
             ul {
                 li a:hover i {
                     transform: scale(1.5) rotateY(360deg);
-                    transition: all .3s ease-out;
+                    transition: all .3 s ease-out;
                 }
             }
         }

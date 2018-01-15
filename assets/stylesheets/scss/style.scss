@@ -302,6 +302,15 @@ button:focus {
     box-shadow: none !important;
 }
 
+input {
+    border: 0;
+    border-bottom: 1px solid $primary-color;
+}
+
+input:focus {
+    outline: 0;
+}
+
 ////////////////////////////////////////////////////
 ///////////////////// Common Class /////////////////
 ////////////////////////////////////////////////////
@@ -426,7 +435,7 @@ header.page-header {
             }
         }
         .ht-right {
-            ul {
+            .icon-list {
                 li a:hover i {
                     transform: scale(1.5) rotateY(360deg);
                     transition: all .3 s ease-out;
@@ -450,9 +459,23 @@ header.page-header {
                 }
             }
         }
-        .search-btn {
-            i {
+        .search-form {
+            .search-input {
+                border: 0;
+                border-bottom: 1px solid $primary-color;
+                padding: 2px;
+                visibility: hidden;
+                transition: .3s;
+                &.show {
+                    visibility: visible;
+                }
+            }
+            .search-btn {
                 color: $primary-color;
+                background: transparent;
+                &:hover {
+                    cursor: pointer;
+                }
             }
         }
     }

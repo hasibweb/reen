@@ -16,6 +16,8 @@
 
     // Document Ready Function
     $(document).ready(function () {
+        searchFun();
+        heroSlider();
         portfolioSlider();
     });
 
@@ -58,5 +60,73 @@
             }
         })
     }
+    // ========================== searchFun ==========================
+    function searchFun() {
+        var searchControl = $('#search-control');
+        var searchInput = $('#search-control .search-input');
+        var searchBtn = $('#search-control .search-btn');
+
+        searchBtn.click(function () {
+            searchInput.toggleClass('show');
+        })
+
+        searchControl.submit(function () {
+            return false;
+        })
+
+    }
+    // Scroll Top Animation
+    $('#scroll-top').click(function () {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 1000)
+    })
+
+    // ========================== heroSlider ==========================
+    function heroSlider() {
+        var slider = $('.hero-slider');
+
+
+        slider.owlCarousel({
+            loop: true,
+            autoplay: true,
+            autoplayTimeout: 4000,
+            smartSpeed: 548,
+            nav: true,
+            dots: true,
+            items: 1,
+            animateOut: 'fadeOut',
+            animateIn: 'bounceInLeft'
+
+        })
+
+        // Slider Layer Animation
+        $('[data-animation]').each(function () {
+            var className = $(this).attr('data-animation');
+            $(this).addClass(className + ' animated')
+        })
+
+        slider.on('translate.owl.carousel', function () {
+            var layer = $(this).find('[data-animation]');
+            layer.each(function () {
+                var animateVal = $(this).attr('data-animation');
+                $(this).removeClass(animateVal + ' animated').css('opacity', '0');
+
+            })
+
+
+        })
+        slider.on('translated.owl.carousel', function () {
+            var layer = $(this).find('.owl-item.active').find('[data-animation]');
+            layer.each(function () {
+                var animateVal = $(this).attr('data-animation');
+                $(this).addClass(animateVal + ' animated').css('opacity', '1');
+
+            })
+
+        })
+    }
+
+
 
 })(jQuery); // End of use strict

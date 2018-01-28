@@ -391,6 +391,17 @@ input:focus {
     z-index: 999999;
 }
 
+// Sticky Nav
+.sticky-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+    background: #fff;
+}
+
+// Arrow Top Animation
 @keyframes arrowTop {
     from {
         transform: translateY(10);
@@ -444,7 +455,7 @@ header.page-header {
         }
     }
     .primary-nav {
-        padding: 29px 0;
+        height: 96px;
         .navbar-brand {
             margin-right: 83px;
         }

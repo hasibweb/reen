@@ -19,6 +19,7 @@
         searchFun();
         heroSlider();
         portfolioSlider();
+        stickyHeader();
     });
 
     // Window Resize Function
@@ -84,9 +85,8 @@
 
     // ========================== heroSlider ==========================
     function heroSlider() {
-        var slider = $('.hero-slider');
-
-
+        var slider = $('#heroSlider');
+        // Slider Activation
         slider.owlCarousel({
             loop: true,
             autoplay: true,
@@ -105,7 +105,7 @@
             var className = $(this).attr('data-animation');
             $(this).addClass(className + ' animated')
         })
-
+        // Slider Layer Animation On Translate
         slider.on('translate.owl.carousel', function () {
             var layer = $(this).find('[data-animation]');
             layer.each(function () {
@@ -113,9 +113,9 @@
                 $(this).removeClass(animateVal + ' animated').css('opacity', '0');
 
             })
-
-
         })
+
+        // Slider Layer Animation On Translatd
         slider.on('translated.owl.carousel', function () {
             var layer = $(this).find('.owl-item.active').find('[data-animation]');
             layer.each(function () {
@@ -125,6 +125,34 @@
             })
 
         })
+    }
+
+
+    // Sticky Header
+    function stickyHeader() {
+        var sticky = $('.primary-nav');
+
+        if (typeof sticky !== "undefined") {
+            var stickyOffset = sticky.offset().top,
+                win = $(window),
+                stickyHeight = sticky.outerHeight();
+
+            // Controll The Jumping Behavour
+            sticky.wrap('<div class="sticky-wrap"></div>');
+            $('.sticky-wrap').height(stickyHeight);
+
+            // Fixed the position
+            win.on('scroll', function () {
+                var scrollPos = win.scrollTop();
+
+                if (scrollPos >= stickyOffset) {
+                    sticky.addClass('sticky-nav');
+                } else {
+                    sticky.removeClass('sticky-nav');
+                }
+            })
+
+        }
     }
 
 

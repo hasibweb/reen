@@ -96,36 +96,55 @@
             dots: true,
             items: 1,
             animateOut: 'fadeOut',
-            animateIn: 'bounceInLeft'
+            animateIn: 'fadeInRight',
+            onTranslate: translateAnim,
+            onTranslated: translatedAnim
 
         })
 
-        // Slider Layer Animation
-        $('[data-animation]').each(function () {
-            var className = $(this).attr('data-animation');
-            $(this).addClass(className + ' animated')
+
+        // Add Animation Globaly
+        slider.find('[data-animation]').each(function () {
+            var animation = $(this).data('animation');
+            $(this).addClass(animation + ' animated')
         })
-        // Slider Layer Animation On Translate
-        slider.on('translate.owl.carousel', function () {
-            var layer = $(this).find('[data-animation]');
+
+        // Animation Duration
+        slider.find('[data-duration]').each(function () {
+            var duration = $(this).data('duration');
+            $(this).css('animation-duration', duration);
+        })
+
+        // Animation Dealy
+        slider.find('[data-delay]').each(function () {
+            var delay = $(this).data('delay');
+            $(this).css('animation-delay', delay);
+        })
+
+        // Translate Animation
+        function translateAnim(event) {
+            var layer = $(event.target).find('[data-animation]');
+
             layer.each(function () {
-                var animateVal = $(this).attr('data-animation');
-                $(this).removeClass(animateVal + ' animated').css('opacity', '0');
-
+                var animation = $(this).data('animation');
+                $(this).removeClass(animation + ' animated').css('opacity', '0');
             })
-        })
 
-        // Slider Layer Animation On Translatd
-        slider.on('translated.owl.carousel', function () {
-            var layer = $(this).find('.owl-item.active').find('[data-animation]');
+        }
+        // TranslateD Animation
+        function translatedAnim(event) {
+
+            var layer = $(event.target).find('.owl-item.active').find('[data-animation]');
+
             layer.each(function () {
-                var animateVal = $(this).attr('data-animation');
-                $(this).addClass(animateVal + ' animated').css('opacity', '1');
-
+                var animation = $(this).data('animation');
+                $(this).addClass(animation + ' animated').css('opacity', '1');
             })
+        }
 
-        })
-    }
+
+
+    } //Hero Slider
 
 
     // Sticky Header

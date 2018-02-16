@@ -272,6 +272,14 @@ input:focus {
   left: 0;
   z-index: 999999; }
 
+.sticky-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  background: #fff; }
+
 @-webkit-keyframes arrowTop {
   from {
     -webkit-transform: translateY(10);
@@ -311,7 +319,7 @@ header.page-header .header-top {
     -webkit-transition: all .3 s ease-out;
     transition: all .3 s ease-out; }
 header.page-header .primary-nav {
-  padding: 29px 0; }
+  height: 96px; }
   header.page-header .primary-nav .navbar-brand {
     margin-right: 83px; }
   header.page-header .primary-nav .navbar-nav .nav-link {
